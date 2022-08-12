@@ -21,12 +21,18 @@ const SurveyPage = () => {
   const [survey, setSurvey] = useState([
     //questions
     {
-      question: "Favorite Color?",
-      choices: ["blue", "green", "yellow"],
+      question: "What role do you see yourself as?",
+      choices: [
+        "Leader",
+        "Creative Director",
+        "Facilitor",
+        "Coach",
+        "Supporter",
+      ],
     },
     {
-      question: "Favorite Fruit?",
-      choices: ["orange", "banana", "apple"],
+      question: "Do you prefer...",
+      choices: ["Task Roles", "Procedural", "Social"],
     },
     {
       question: "Favorite TA",
@@ -38,16 +44,18 @@ const SurveyPage = () => {
   const handleSaveSurvey = async (e) => {
     e.preventDefault();
     console.log("Handle form submit.");
-    const { name, value } = e.target;
-    const inputName = e.target.name;
-    const inputValue = e.target.value;
-    console.log(inputName, inputValue);
+
     const userProfile = Auth.getProfile();
-    //grab ID for mutation
+    // grab ID/name for mutation
+
+    const { target } = e;
+    const inputName = target.name;
+    const inputValue = target.value;
+    console.log(inputName, inputValue);
     // add mutation for (surveyAnswers)
     // pass to graphql controller mutation to update the user with their survey data
     // then, clear input data set survey inputs to clear after they receive data
-    setSurveyAnswers("");
+    // setSurveyAnswers("");
   };
 
   //can we turn these to "for each"?
@@ -75,7 +83,7 @@ const SurveyPage = () => {
                 <Col xs={12} md={8}>
                   <Form as="select" size="lg">
                     <Options
-                      key={questions.key}
+                      name={questions.name}
                       value={questions.value}
                       input={questions.input}
                       choices={questions.choices}
