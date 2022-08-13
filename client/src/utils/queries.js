@@ -16,6 +16,7 @@ export const GET_USER_MATCHES = gql`
     getUserMatches(user: $user) {
       name
       score
+      email
     }
   }
 `;

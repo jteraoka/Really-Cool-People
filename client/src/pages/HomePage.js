@@ -14,7 +14,7 @@ const HomePage = () => {
             {loading && <div>don't look at me yet</div>}
 
             {!loading && !error && <div>
-                {data.getUserMatches.map(match => <p>{`${match.name} ${match.score}`}</p>)}   
+                {data.getUserMatches.map(match => <p>{`${match.name} ${match.score} ${match.email}`}</p>)}   
             </div>}
 
             {/**add survey link and email addressed for users */}
@@ -22,5 +22,4 @@ const HomePage = () => {
         </>
     )
 }
-
 export default HomePage;

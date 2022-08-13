@@ -68,7 +68,6 @@ const SurveyPage = () => {
     }
   };
 
-  //can we turn these to "for each"?
   function update(e) {
     const { name, value } = e.target;
     console.log(name, value);
