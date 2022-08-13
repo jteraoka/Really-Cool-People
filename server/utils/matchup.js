@@ -11,17 +11,17 @@ const getMatchPercentage = (currentUser, matchedUser) => {
 
     let score = 0;
   
-    if(currentUser.q1 == matchedUser.q1) {
-        score+= 2
+    if(currentUser.q1 !== matchedUser.q1) {
+        score+= 1
     }
     if(currentUser.q2 == matchedUser.q2) {
-        score+= 1
+        score+= 2
     }
     if(currentUser.q3 == matchedUser.q3) {
         score+= 6
     }
 
-    return score/MAX_POINTS
+    return (Math.round((score/MAX_POINTS)*100))
 }
 
 module.exports = { getMatchPercentage }

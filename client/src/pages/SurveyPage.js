@@ -12,29 +12,29 @@ import {
 import Options from "../components/Options";
 import { SAVE_SURVEY } from "../utils/mutations";
 import Auth from "../utils/auth";
-import { COLORS, FRUITS, FTA } from "../utils/surveyChoices"
+import { ROLES, VALUES, IDENTITIES } from "../utils/surveyChoices"
 
 const SurveyPage = () => {
   const [saveSurvey, { error }] = useMutation(SAVE_SURVEY);
   const [surveyAnswers, setSurveyAnswers] = useState({
-    q1: "blue",
-    q2: "orange",
-    q3: "Ben",
+    q1: "Leader",
+    q2: "Fun",
+    q3: "N/A",
   });
 
   const [survey, setSurvey] = useState([
     //questions
     {
-      question: "Favorite Color?",
-      choices: COLORS,
+      question: "What role do you like to play?",
+      choices: ROLES,
     },
     {
-      question: "Favorite Fruit?",
-      choices: FRUITS,
+      question: "What do you value in a team member?",
+      choices: VALUES,
     },
     {
-      question: "Favorite TA",
-      choices: FTA,
+      question: "Do you have any social identities that you'd like to be matched by?",
+      choices: IDENTITIES,
     },
   ]);
 
@@ -68,7 +68,6 @@ const SurveyPage = () => {
     }
   };
 
-  //can we turn these to "for each"?
   function update(e) {
     const { name, value } = e.target;
     console.log(name, value);

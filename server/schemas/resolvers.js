@@ -48,7 +48,8 @@ const resolvers = {
           
           return {
             name: user.username,
-            score: score
+            score: score,
+            email: user.email
           }
         } catch (e) {
           console.error(e)

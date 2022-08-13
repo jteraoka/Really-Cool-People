@@ -1,9 +1,9 @@
-const COLORS =  ["blue", "green", "yellow"]
-const FRUITS = ["orange", "banana", "apple"]
-const FTA =  ["Ben", "Probably Ben", "Definitely Ben"]
+const ROLES =  ["Leader", "Designer", "Facilitator", "Supporter"]
+const VALUES = ["Fun", "Independence", "Pragmatism", "Uniqueness"]
+const IDENTITIES =  ["N/A", "Queer", "BIPOC", "Veteren"] 
 
 module.exports = {
-    COLORS,
-    FRUITS,
-    FTA
+    ROLES,
+    VALUES,
+    IDENTITIES
 }

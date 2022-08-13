@@ -23,6 +23,7 @@ const typeDefs = gql`
   type Match {
     name: String,
     score: Float
+    email: String,
   }
 
   type Query {
